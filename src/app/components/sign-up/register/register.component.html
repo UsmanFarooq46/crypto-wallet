@@ -1,0 +1,6 @@
+<app-singup-intro *ngIf="signupIntro" (isImportWalletClicked)="isImportWalletClicked($event)"></app-singup-intro>
+<app-create-wallet *ngIf="createWallet " (isWalletCreated)="isWalletCreated($event)"></app-create-wallet>
+<app-twelve-phrase *ngIf="isSeedPhrase" [seedPhrase]="twelvePhrase.user.mnemonic"
+    (gotoRecoveryPhrase)="goToRecoveryPhrase($event)"></app-twelve-phrase>
+<app-confirm-secret *ngIf="isRecoveryPhase" (isBackButtonClicked)="isBackButtonClicked($event)"
+    [seedPhraseString]="twelvePhrase.user.mnemonic"></app-confirm-secret>

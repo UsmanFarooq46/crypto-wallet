@@ -1,0 +1,47 @@
+.header {
+  background-color: #7674744f;
+  display: flex;
+  padding: 15px 34px;
+  align-items: center;
+  justify-content: space-between;
+  .logo_image {
+    img {
+      width: 55px;
+    }
+  }
+  .network {
+    border: 1px solid grey;
+    padding: 9px 23px;
+    border-radius: 66px;
+  }
+}
+
+.login_body {
+  padding: 35px 0px;
+  .Logo {
+    width: 150px;
+    display: block;
+    margin: auto;
+  }
+  h3 {
+    font-size: 25px;
+    span {
+      color: blue;
+      font-weight: 600;
+      line-height: 2.5rem;
+    }
+  }
+}
+
+
+.total_window {
+  width: 100%;
+  background-color: #605f5f47;
+  height: 100vh;
+  .inner_window_view {
+    width: 75%;
+    background-color: white;
+    margin: auto;
+  }
+}
+

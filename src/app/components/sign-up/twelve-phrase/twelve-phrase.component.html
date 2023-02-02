@@ -1,0 +1,36 @@
+<div class="main_container">
+    <div class="logo_image_caption">
+        <div class="image">
+            <img src="./../../../assets/images/wallet_logo.png" alt="">
+        </div>
+        <div class="label">
+            Crypto Wallet
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-md-5">
+            <h2>Secret Recovery Phrase</h2>
+            <p>Your Secret Recovery Phrase makes it easy to back up and restore your account.</p>
+            <p>WARNING: Never disclose your Secret Recovery Phrase. Anyone with this phrase can take your Ether forever.
+            </p>
+            <div class="phrase_container">
+                <p class="text-center">{{seedPhrase}}</p>
+            </div>
+            <div class="button">
+                <button (click)="gotoRecoveryPhase()">Next</button>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <p>Tips: </p>
+            <p>Store this phrase in a password manager like 1Password.</p>
+            <p>Write this phrase on a piece of paper and store in a secure location. If you want even more security,
+                write it down on multiple pieces of paper and store each in 2 - 3 different locations.</p>
+            <p>Memorize this phrase.</p>
+        </div>
+        <div class="col-1"></div>
+
+    </div>
+
+</div>

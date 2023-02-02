@@ -1,0 +1,49 @@
+<div [ngClass]="{total_window: windowWidth>768}" class="">
+    <div [ngClass]="windowWidth>768?'inner_window_view':''" class="">
+        <app-header></app-header>
+        <div class="body" style="padding: 30px 0px;">
+            <div class="login_body">
+                <img class="Logo" src="./../../../assets/images/wallet_logo.png" alt="logo">
+                <h3 class="text-center mt-4 p-0">Welcome Back to <br><span> Crypto Wallet</span></h3>
+            </div>
+
+            <div class="container">
+                <div class="add_password">
+                    <form class="mat-form">
+                        <mat-form-field class="mat-input-width">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" [(ngModel)]="walletPass"
+                                [ngModelOptions]="{standalone: true}">
+                        </mat-form-field>
+                        <div class="unlock-btn text-center">
+                            <button mat-raised-button color="primary" (click)="Login()">Unlock</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <app-header></app-header> -->
+
+<!-- login body starts here -->
+<!-- <div class="login_body">
+    <img class="Logo" src="./../../../assets/images/wallet_logo.png" alt="logo">
+    <h3 class="text-center mt-4 p-0">Welcome Back to <br><span> Crypto Wallet</span></h3>
+</div>
+
+<div class="container">
+    <div class="add_password">
+        <form class="mat-form">
+            <mat-form-field class="mat-input-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" [(ngModel)]="walletPass" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <div class="unlock-btn text-center">
+                <button mat-raised-button color="primary" (click)="Login()">Unlock</button>
+            </div>
+        </form>
+    </div>
+</div> -->

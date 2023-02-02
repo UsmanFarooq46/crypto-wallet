@@ -1,0 +1,147 @@
+@import "./../../../../assets/_scss/variable";
+$blue_color: $theme_color;
+$red_color: red;
+
+.login_page {
+  // border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login_wrape {
+  width: 454px;
+  margin-top: -45px;
+  border: 1px solid $blue_color;
+  border-radius: 12px;
+  @media screen and (max-width: 550px) {
+    width: 330px;
+  }
+  .login_header {
+    background-color: $blue_color;
+    padding: 15px 1px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    h5 {
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+  .login_body {
+    padding: 23px;
+  }
+
+  .Login_buttons {
+    width: 123px;
+  }
+  .login_footer {
+    text-align: center;
+    padding-bottom: 23px;
+    margin-top: -14px;
+    cursor: pointer;
+  }
+}
+
+.wrongPass {
+  text-align: center;
+  background: $red_color;
+  padding: 11px;
+  color: white;
+  border-radius: 6px;
+}
+
+.form_group {
+  label {
+    // margin: 15px 0px 3px;
+    margin: 7px 3px 4px;
+    font-weight: 600;
+    font-size: 15px;
+    @media screen and (max-width: 550px) {
+      font-size: 13px;
+    }
+  }
+}
+
+.form_control {
+  display: block;
+  width: 100%;
+  background-color: white;
+  padding: 8px 8px;
+  /* font-size: 16px; */
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  // border-left: 4px solid #0d369e;
+  transition: all 0.2s linear;
+
+  &:focus {
+    border: 1px solid $blue_color;
+    outline: $blue_color;
+    border-left: 2px solid $blue_color;
+  }
+  @media screen and (max-width: 550px) {
+    font-size: 11px;
+  }
+}
+
+.invalid_field {
+  border: 1px solid red;
+  outline: red;
+  // border-left: 7px solid red;
+  &:focus {
+    border: 1px solid red;
+    outline: red;
+    border-left: 2px solid red;
+  }
+}
+
+// .password_container {
+//   width: 80%;
+// }
+
+.logo_image_caption {
+  display: flex;
+  margin: 4px 0px 63px;
+  align-items: center;
+  justify-content: center;
+  .image {
+    img {
+      width: 50px;
+      @media screen and (max-width: 550px) {
+        width: 45px;
+      }
+    }
+  }
+  .label {
+    font-size: 26px;
+    padding-left: 12px;
+    font-family: fantasy;
+    @media screen and (max-width: 550px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.button {
+    text-align: center;
+    margin: 21px 0px 25px !important;
+    @media screen and (max-width: 550px) {
+      margin: 19px 0px 15px;
+    }
+    button {
+      border: none;
+      background-color: $theme_color;
+      color: white;
+      border-radius: 28px;
+      padding: 11px 63px;
+    }
+  }
+
+// label {
+//   font-size: 15px;
+//   font-weight: 500;
+//   margin: 2px 0px 8px;
+// }

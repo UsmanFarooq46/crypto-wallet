@@ -1,0 +1,97 @@
+<div [ngClass]="{total_window: windowWidth>768}" class="">
+    <div [ngClass]="windowWidth>768?'inner_window_view':''" class="">
+        <app-header></app-header>
+        <div class="profile-wrape">
+            <!-- profile Header start -->
+            <div class="profile-header-wrape">
+                <div class="profile-title-header">
+                    <div class=""></div>
+                    <div class="account-title" title="copy to clipboard">
+                        <div class="title">Account Title</div>
+                        <div class="menamonics" (click)="copyToClipBoard('xd134...1232')">xd134...1232 <span><i
+                                    class="fa-solid fa-copy"></i></span></div>
+                    </div>
+                    <div class="menu-icon" (click)="showMenu=!showMenu"><i class="fa fa-solid fa-bars"></i></div>
+                </div>
+                <div class="menu-wrape" *ngIf="showMenu">
+                    <ul>
+                        <li> <span class="icon"><i class="fa fa-solid fa-up-right-from-square"></i></span> View Account
+                            on
+                            EtherScan</li>
+                        <li><span class="icon"><i class="fa fa-solid fa-qrcode"></i></span> Account Details</li>
+                        <li> <span class="icon"><i class="fa fa-solid fa-file-waveform"></i></span>Transaction History
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- profile Header ends -->
+
+            <!-- profile-Body start-->
+            <div class="profile-body">
+                <div class="currecy-symbol">
+                    <img src="./../../../assets/images/Ethereum_logo.svg.png" alt="">
+                </div>
+                <div class="crypto-currency">
+                    <h2>0.193 ETH</h2>
+                    <h4>$988.90 USD</h4>
+                </div>
+                <div class="buttons">
+                    <div class="buy label-icon-wrape">
+                        <a href="javascript:void(0)"><span><i class="fa-solid fa-arrow-down"></i></span></a>
+                        <p>Buy</p>
+                    </div>
+                    <div class="send label-icon-wrape">
+                        <a href="javascript:void(0)"><span><i class="fa-regular fa-paper-plane"></i></span></a>
+                        <p>send</p>
+                    </div>
+                    <div class="swap label-icon-wrape">
+                        <a href="javascript:void(0)"><span><i class="fa-solid fa-retweet"></i></span></a>
+                        <p>swap</p>
+                    </div>
+                </div>
+
+                <div class="tabs mt-4">
+                    <div class="tab-buttons">
+                        <button (click)="showAssets=true"
+                            [ngStyle]="{'border-color': showAssets ? '#7272affa':'transparent' }">assets</button>
+                        <button (click)="showAssets=false"
+                            [ngStyle]="{'border-color': showAssets ? 'transparent':'#7272affa' }">Activity</button>
+                    </div>
+
+                    <div class="assets" *ngIf="showAssets">
+                        <div class="asset-card">
+                            <div class="image-title-wrape">
+                                <div class="image">
+                                    <img src="./../../../assets/images/Ethereum_logo.svg.png" alt="">
+                                </div>
+                                <div class="tile-description">
+                                    <h4 class="m-0 p-0">0 ETH</h4>
+                                    <p class="m-0 p--0">$0.0 USD </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="" *ngIf="!showAssets">
+                        <p style="    text-align: center;
+                        margin: 0;
+                        margin-top: 22px;
+                        font-size: 15px;">You have no transactions</p>
+                        <!-- <div class="asset-card">
+                            <div class="image-title-wrape">
+                                <div class="image">
+                                    <img src="./../../../assets/images/Ethereum_logo.svg.png" alt="">
+                                </div>
+                                <div class="tile-description">
+                                    <h4 class="m-0 p-0">0 ETH</h4>
+                                    <p class="m-0 p--0">$0.0 USD </p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

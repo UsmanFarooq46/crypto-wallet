@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "./assets/_scss/variable";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// materail Forms
+
+.mat-form {
+  width: 100%;
+}
+.mat-input-width {
+  width: 100%;
+}
+
+// custtom button
+
+

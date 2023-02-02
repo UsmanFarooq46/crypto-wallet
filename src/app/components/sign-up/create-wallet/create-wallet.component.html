@@ -1,0 +1,49 @@
+<div class="login_page" [ngStyle]="{height:innerHeight+'px' }">
+  <div class="logo_image_caption">
+    <div class="image">
+      <img src="./../../../assets/images/wallet_logo.png" alt="">
+    </div>
+    <div class="label">
+      Crypto Wallet
+    </div>
+  </div>
+
+  <div class="login_wrape bg-white">
+    <div class="login_header">
+      <h5>Create Your Wallet</h5>
+    </div>
+    <div class="login_body">
+      <div class="wrongPass" *ngIf="isMatched==false">Passowrd does not match</div>
+      <form class="login_form" [formGroup]="formGroup" (ngSubmit)="submit()">
+        <div class="form_group">
+          <label for="newPass">Password</label>
+          <input type="password" class="form_control" name="newPass" formControlName="newPass" placeholder="Password"
+            [ngClass]="{invalid_field:form.newPass.invalid && form.newPass.touched}" />
+          <div *ngIf="form.newPass.invalid && form.newPass.touched" class="invalid-feedback d-block">
+            <div *ngIf="form.newPass.errors.required" class="invalid-feedback d-block">
+              Required
+            </div>
+            <div *ngIf="formGroup.get('newPass').hasError('minlength')" class="invalid-feedback d-block">
+              minimum 8 characters required
+            </div>
+          </div>
+        </div>
+        <div class="form_group">
+          <label for="confirmPass">Confirm Password</label>
+          <input type="password" class="form_control" name="confirmPass" formControlName="confirmPass"
+            placeholder="Confirm Password"
+            [ngClass]="{invalid_field:form.confirmPass.invalid && form.confirmPass.touched}" />
+          <div *ngIf="form.confirmPass.invalid && form.confirmPass.touched" class="invalid-feedback d-block">
+            <div *ngIf="form.confirmPass.errors.required" class="invalid-feedback d-block">
+              Required
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-3 button">
+          <button type="submit">Create Wallet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

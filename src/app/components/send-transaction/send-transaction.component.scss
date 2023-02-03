@@ -1,0 +1,32 @@
+.send_transaction {
+  height: 80vh;
+  width: 54%;
+  background-color: green;
+  margin: auto;
+  border-radius: 10px;
+  .transaction_header {
+    .send_back {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      background-color: #e5e1e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 17px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      p {
+        margin-right: 41px !important;
+      }
+      h2 {
+        margin-left: 34px !important;
+        font-size: 27px;
+      }
+    }
+  }
+}
+
+.inner_window_view {
+  width: 75%;
+  background-color: #e5e1e1;
+  margin: auto;
+}

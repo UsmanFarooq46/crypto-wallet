@@ -12,6 +12,7 @@ import { SharedService } from 'src/app/Services/shared.service';
 })
 export class CreateWalletComponent {
   formGroup: any;
+  isLoading: boolean = false;
   @Output() isWalletCreated: any = new EventEmitter();
   isMatched: boolean = true;
   innerHeight: number = window.innerHeight;
@@ -38,26 +39,40 @@ export class CreateWalletComponent {
 
   submit() {
     if (this.isValidated()) {
-      // this.isWalletCreated.emit('created');
       console.log('everything is right');
       let payload = {
         password: this.formGroup.value.newPass,
       };
+      this.isLoading = true;
       this.service.createWallet(payload).subscribe(
-        (resp) => {
-          console.log('wallet has created: ', resp);
-          sessionStorage.setItem('token', resp.tokens);
-          let user = resp.user;
-          delete user.privateKey;
-          localStorage.setItem('user', JSON.stringify(user));
-          this.isWalletCreated.emit(resp);
-        },
-        (err) => {
-          this.toastr.openSnackBar(
-            err.error.message || 'Error occured in creating wallet'
-          );
-          console.log('error Occured: ', err);
+        {
+          next: (resp) => {
+            let user = resp.user;
+            delete user.privateKey;
+            localStorage.setItem('user', JSON.stringify(user));
+            this.isWalletCreated.emit(resp);
+          },
+          error: (err) => {
+            this.toastr.openSnackBar(
+              err.error.message || 'Error occured in creating wallet'
+            );
+            console.log('error Occured: ', err);
+          },
+          complete: () => (this.isLoading = false),
         }
+        // (resp) => {
+        //   sessionStorage.setItem('token', resp.tokens);
+        //   let user = resp.user;
+        //   delete user.privateKey;
+        //   localStorage.setItem('user', JSON.stringify(user));
+        //   this.isWalletCreated.emit(resp);
+        // },
+        // (err) => {
+        //   this.toastr.openSnackBar(
+        //     err.error.message || 'Error occured in creating wallet'
+        //   );
+        //   console.log('error Occured: ', err);
+        // }
       );
     }
   }
@@ -65,7 +80,6 @@ export class CreateWalletComponent {
   isValidated() {
     if (this.formGroup.invalid) {
       console.log('form is invalid: ', this.formGroup);
-
       this.formGroup.markAllAsTouched();
       return false;
     }
@@ -73,7 +87,6 @@ export class CreateWalletComponent {
     if (this.formGroup.value.newPass != this.formGroup.value.confirmPass) {
       this.isMatched = false;
       this.toastr.openSnackBar('Password does not match');
-
       return false;
     }
     return true;

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -16,5 +16,14 @@ export class SharedService {
 
   login(payload: any) {
     return this.http.post<any>(this.apiURL + 'auth/login', payload);
+  }
+
+  // profile
+  getBalance(address: string) {
+    return this.http
+      .get(this.apiURL + 'users/balance', {
+        params: new HttpParams().set('address', address),
+      })
+      // .toPromise();
   }
 }

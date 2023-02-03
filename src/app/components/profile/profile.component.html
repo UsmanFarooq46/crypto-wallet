@@ -8,16 +8,17 @@
                     <div class=""></div>
                     <div class="account-title" title="copy to clipboard">
                         <div class="title">Account Title</div>
-                        <div class="menamonics" (click)="copyToClipBoard('xd134...1232')">xd134...1232 <span><i
+                        <div class="menamonics" (click)="copyToClipBoard(userAddress)">{{userAddress.substring(0,
+                            5)}}...{{userAddress.substring(userAddress.length - 5)}} <span><i
                                     class="fa-solid fa-copy"></i></span></div>
                     </div>
                     <div class="menu-icon" (click)="showMenu=!showMenu"><i class="fa fa-solid fa-bars"></i></div>
                 </div>
                 <div class="menu-wrape" *ngIf="showMenu">
                     <ul>
-                        <li> <span class="icon"><i class="fa fa-solid fa-up-right-from-square"></i></span> View Account
-                            on
-                            EtherScan</li>
+                        <li (click)="openlink(userAddress)"> <span class="icon"><i
+                                    class="fa fa-solid fa-up-right-from-square"></i></span> View
+                            Account on EtherScan </li>
                         <li><span class="icon"><i class="fa fa-solid fa-qrcode"></i></span> Account Details</li>
                         <li> <span class="icon"><i class="fa fa-solid fa-file-waveform"></i></span>Transaction History
                         </li>

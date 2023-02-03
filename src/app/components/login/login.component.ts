@@ -31,13 +31,16 @@ export class LoginComponent implements OnInit {
       address: this.user.address,
       password: this.walletPass,
     };
-    this.service.login(payload).subscribe(
-      (resp) => {
-        console.log('logged in', resp);
+    this.service.login(payload).subscribe({
+      next: (resp) => {
+        sessionStorage.setItem('token', resp.tokens);
+        localStorage.setItem('user', JSON.stringify(resp.user));
+        console.log('got resp of login', resp);
+        this.router.navigateByUrl('/profile');
       },
-      (err) => {
-        console.log('err while logging', err);
-      }
-    );
+      error: (err) => {
+        console.log('got err : ', err);
+      },
+    });
   }
 }

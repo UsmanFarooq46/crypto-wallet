@@ -1,0 +1,21 @@
+<div [ngClass]="{total_window: windowWidth>768}" class="">
+    <div [ngClass]="windowWidth>768?'inner_window_view':''" class="">
+        <app-header></app-header>
+
+        <div class="send_transaction">
+            <div class="transaction_header">
+                <div class="send_back">
+                    <div class=""></div>
+                    <h2 class="p-0 m-0">Send</h2>
+                    <p class="p-0 m-0">cancel</p>
+                </div>
+                <div class="input" style="background-color:#e5e1e1">
+                    <div class="input_group">
+                        <div class="icon"></div>
+                        <input type="text" class="form-control form-control-lg" placeholder="place address">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

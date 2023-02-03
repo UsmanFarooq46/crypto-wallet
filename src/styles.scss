@@ -22,4 +22,14 @@ body {
 
 // custtom button
 
-
+.total_window {
+  width: 100%;
+  //   background-color: #d3d2d2;
+  background-color: #e5e1e1;
+  height: 100vh;
+  .inner_window_view {
+    width: 75%;
+    background-color: white;
+    margin: auto;
+  }
+}

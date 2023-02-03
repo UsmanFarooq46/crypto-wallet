@@ -19,6 +19,7 @@ import { CreateWalletComponent } from './components/sign-up/create-wallet/create
 import { TwelvePhraseComponent } from './components/sign-up/twelve-phrase/twelve-phrase.component';
 import { ConfirmSecretComponent } from './components/sign-up/confirm-secret/confirm-secret.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SendTransactionComponent } from './components/send-transaction/send-transaction.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     CreateWalletComponent,
     TwelvePhraseComponent,
     ConfirmSecretComponent,
+    SendTransactionComponent,
   ],
   imports: [
     BrowserModule,

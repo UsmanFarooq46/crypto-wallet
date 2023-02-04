@@ -44,36 +44,21 @@ export class CreateWalletComponent {
         password: this.formGroup.value.newPass,
       };
       this.isLoading = true;
-      this.service.createWallet(payload).subscribe(
-        {
-          next: (resp) => {
-            let user = resp.user;
-            delete user.privateKey;
-            localStorage.setItem('user', JSON.stringify(user));
-            this.isWalletCreated.emit(resp);
-          },
-          error: (err) => {
-            this.toastr.openSnackBar(
-              err.error.message || 'Error occured in creating wallet'
-            );
-            console.log('error Occured: ', err);
-          },
-          complete: () => (this.isLoading = false),
-        }
-        // (resp) => {
-        //   sessionStorage.setItem('token', resp.tokens);
-        //   let user = resp.user;
-        //   delete user.privateKey;
-        //   localStorage.setItem('user', JSON.stringify(user));
-        //   this.isWalletCreated.emit(resp);
-        // },
-        // (err) => {
-        //   this.toastr.openSnackBar(
-        //     err.error.message || 'Error occured in creating wallet'
-        //   );
-        //   console.log('error Occured: ', err);
-        // }
-      );
+      this.service.createWallet(payload).subscribe({
+        next: (resp) => {
+          let user = resp.user;
+          delete user.privateKey;
+          localStorage.setItem('user', JSON.stringify(user));
+          this.isWalletCreated.emit(resp);
+        },
+        error: (err) => {
+          this.toastr.openSnackBar(
+            err.error.message || 'Error occured in creating wallet'
+          );
+          console.log('error Occured: ', err);
+        },
+        complete: () => (this.isLoading = false),
+      });
     }
   }
 

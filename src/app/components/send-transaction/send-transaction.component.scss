@@ -1,12 +1,24 @@
+@import "./../../../assets/_scss/variable";
 .send_transaction {
-  height: 80vh;
+  height: 86vh;
   width: 54%;
-  background-color: green;
+  background-color: white;
   margin: auto;
   border-radius: 10px;
+  //   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  position: relative;
+  @media screen and (max-width: 780px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 470px) {
+    width: 100%;
+  }
+
   .transaction_header {
     .send_back {
-      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      //   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       background-color: #e5e1e1;
       display: flex;
       justify-content: space-between;
@@ -16,11 +28,37 @@
       border-top-right-radius: 8px;
       p {
         margin-right: 41px !important;
+        margin-top: 5px !important;
+        color: $theme_color;
+        cursor: pointer;
       }
-      h2 {
+      h3 {
         margin-left: 34px !important;
-        font-size: 27px;
+        font-size: 22px;
       }
+    }
+  }
+}
+
+.input {
+  padding: 14px 9px;
+  .input_group {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 11px;
+    .icon {
+      font-size: 18px;
+      color: grey;
+    }
+    input {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      padding-left: 12px;
+      font-size: 17px;
+      outline: none;
     }
   }
 }
@@ -29,4 +67,55 @@
   width: 75%;
   background-color: #e5e1e1;
   margin: auto;
+}
+
+.transaction_body {
+  .asset_group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 12px;
+    width: 100%;
+    p {
+      font-size: 17px;
+      margin: 0;
+      width: 10%;
+    }
+    .asset_card {
+      border: 1px solid #9b9797;
+      border-radius: 4px;
+      padding: 2px 17px;
+      width: 70%;
+      h3 {
+        margin: 0;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      h4 {
+        margin: 0;
+        font-size: 12px;
+        margin-top: -6px;
+      }
+    }
+  }
+}
+
+.buttons {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  .button {
+    button {
+      border: none;
+      background-color: $theme_color;
+      color: white;
+      border-radius: 28px;
+      padding: 11px 63px;
+      margin-top: 12px;
+    }
+  }
 }

@@ -20,6 +20,7 @@ import { TwelvePhraseComponent } from './components/sign-up/twelve-phrase/twelve
 import { ConfirmSecretComponent } from './components/sign-up/confirm-secret/confirm-secret.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SendTransactionComponent } from './components/send-transaction/send-transaction.component';
+import { ImportWalletComponent } from './components/sign-up/import-wallet/import-wallet.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SendTransactionComponent } from './components/send-transaction/send-tra
     TwelvePhraseComponent,
     ConfirmSecretComponent,
     SendTransactionComponent,
+    ImportWalletComponent,
   ],
   imports: [
     BrowserModule,

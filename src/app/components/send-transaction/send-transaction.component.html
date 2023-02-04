@@ -6,14 +6,46 @@
             <div class="transaction_header">
                 <div class="send_back">
                     <div class=""></div>
-                    <h2 class="p-0 m-0">Send</h2>
-                    <p class="p-0 m-0">cancel</p>
+                    <h3 class="p-0 m-0">Send to</h3>
+                    <p class="p-0 m-0" routerLink="/profile">cancel</p>
                 </div>
                 <div class="input" style="background-color:#e5e1e1">
                     <div class="input_group">
-                        <div class="icon"></div>
-                        <input type="text" class="form-control form-control-lg" placeholder="place address">
+                        <div class="icon"><i class="fa fa-solid fa-magnifying-glass"></i></div>
+                        <input type="text" class="" placeholder="place address" [(ngModel)]="addressTo">
                     </div>
+                </div>
+            </div>
+
+            <div class="transaction_body">
+                <div class="asset_group">
+                    <p>Asset: </p>
+                    <div class="asset_card">
+                        <h3>Goerly ETH</h3>
+                        <h4>Balance: {{balance?.balance}} {{balance?.symbol}}</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transaction_body">
+                <div class="asset_group">
+                    <p>Amount:</p>
+                    <div class="asset_card">
+                        <div class="input">
+                            <input type="number" [(ngModel)]="transferAmount">
+                        </div>
+                        <div class="" style="padding-left: 43px;
+                        margin-top: -10px;">GoerlyETH</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <div class="button">
+                    <button>Cancel</button>
+                </div>
+                <div class="button">
+                    <button (click)="sendTransaction()">Send</button>
                 </div>
             </div>
         </div>

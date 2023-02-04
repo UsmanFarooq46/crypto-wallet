@@ -33,8 +33,8 @@
                     <img src="./../../../assets/images/Ethereum_logo.svg.png" alt="">
                 </div>
                 <div class="crypto-currency">
-                    <h2>0.193 ETH</h2>
-                    <h4>$988.90 USD</h4>
+                    <h2>{{customRound(userBalance?.balance,6)}} {{userBalance?.symbol}}</h2>
+                    <h4>{{customRound( userBalance?.balance*exchangeRate,3)}} $USD</h4>
                 </div>
                 <div class="buttons">
                     <div class="buy label-icon-wrape">
@@ -42,7 +42,8 @@
                         <p>Buy</p>
                     </div>
                     <div class="send label-icon-wrape">
-                        <a href="javascript:void(0)"><span><i class="fa-regular fa-paper-plane"></i></span></a>
+                        <a href="javascript:void(0)" routerLink="/send-transaction"><span><i
+                                    class="fa-regular fa-paper-plane"></i></span></a>
                         <p>send</p>
                     </div>
                     <div class="swap label-icon-wrape">
@@ -66,8 +67,9 @@
                                     <img src="./../../../assets/images/Ethereum_logo.svg.png" alt="">
                                 </div>
                                 <div class="tile-description">
-                                    <h4 class="m-0 p-0">0 ETH</h4>
-                                    <p class="m-0 p--0">$0.0 USD </p>
+                                    <h4 class="m-0 p-0">{{customRound(userBalance?.balance,6)}}
+                                        {{userBalance?.symbol}}</h4>
+                                    <p class="m-0 p--0">{{customRound( userBalance?.balance*exchangeRate,3)}} $USD </p>
                                 </div>
                             </div>
                         </div>

@@ -20,10 +20,15 @@ export class SharedService {
 
   // profile
   getBalance(address: string) {
-    return this.http
-      .get(this.apiURL + 'users/balance', {
-        params: new HttpParams().set('address', address),
-      })
-      // .toPromise();
+    return this.http.get(this.apiURL + 'users/balance', {
+      params: new HttpParams().set('address', address),
+    });
+    // .toPromise();
+  }
+
+  getExchangeRateOfETHtoUSD() {
+    return this.http.get(
+      'https://api.coinbase.com/v2/exchange-rates?currency=ETH'
+    );
   }
 }
